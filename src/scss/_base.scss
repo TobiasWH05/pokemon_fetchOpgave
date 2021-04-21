@@ -1,8 +1,13 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body {
-    background-color: white;
-    color: red;
+
+body{
+    padding:1em;
+}
+
+.header{
+    text-align: center;
 }

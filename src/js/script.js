@@ -1,1 +1,0 @@
-alert("Add your scripts to the /src/js folder");

@@ -1,14 +1,14 @@
-const gulp = require('gulp');
-const connect = require('gulp-connect');
-const imagemin = require('gulp-imagemin');
+const gulp = require("gulp");
+const connect = require("gulp-connect");
+const imagemin = require("gulp-imagemin");
 const imageResize = require('gulp-image-resize');
 
 function image(){
-    return gulp.src('./src/img/**/*.*')
+    return gulp.src("./src/img/**/*.*")
         .pipe(imageResize({
-            width : 1000,
+            width : 1800,
             height : 1000,
-            crop : true,
+            crop : false,
             upscale : false
         }))
         .pipe(imagemin([
@@ -23,15 +23,15 @@ function image(){
             })
         ]))
         .pipe(gulp.dest("./dist/img"))
-        .pipe(connect.reload());
+        .pipe(connect.reload())
 }
 
 function buildIMAGE(){
-    return gulp.src('./src/img/**/*.*')
+    return gulp.src("./src/img/**/*.*")
         .pipe(imageResize({
-            width : 1000,
+            width : 1800,
             height : 1000,
-            crop : true,
+            crop : false,
             upscale : false
         }))
         .pipe(imagemin([
@@ -46,13 +46,16 @@ function buildIMAGE(){
             })
         ]))
         .pipe(gulp.dest("./build/img"));
+        
 }
 
-
 function watchImage(){
-    return gulp.watch("./src/img/**/*.*", { ignoreInitial: false }, image);
+    return gulp.watch("./src/img/**/*.*", {
+        ignoreInitial: false
+    }, image)
 }
 
 module.exports = {
     watchImage,
-buildIMAGE}; 
+    buildIMAGE
+}

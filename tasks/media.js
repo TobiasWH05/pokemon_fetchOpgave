@@ -1,6 +1,7 @@
-const gulp = require('gulp');
-const connect = require('gulp-connect');
-
+//kig efter media filer. Skal flyttes til en tilsvarende mediamappe i dist mappen
+//husk at exportere og derefter importere i gulfile
+const gulp = require("gulp");
+const connect = require("gulp-connect");
 
 function media(){
     return gulp.src("./src/media/**/*.*")
@@ -8,18 +9,18 @@ function media(){
         .pipe(connect.reload());
 }
 
-function buildMedia(){
+function buildMEDIA(){
     return gulp.src("./src/media/**/*.*")
         .pipe(gulp.dest("./build/media"));
 }
 
-function watchMedia(){
-    return gulp.watch('./src/media/**/*.*', {
+function watchmedia(){
+    return gulp.watch("./src/media/**/*.*", {
         ignoreInitial: false
-    }, media)   
+    }, media)
 }
 
 module.exports = {
-    watchMedia,
-    buildMedia
+    watchmedia,
+    buildMEDIA
 }
