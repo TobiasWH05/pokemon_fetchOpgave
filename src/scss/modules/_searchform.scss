@@ -1,0 +1,18 @@
+.searchform{
+    display:flex; //får inline elementer til at stå helt tæt
+
+    &__input {
+        padding:0.4em;
+        border:2px solid rgb(237, 205, 255);
+        border-radius: 0.75em 0 0 0.75em;
+        
+    }
+
+    &__submit{
+        background-color: rgb(235, 209, 233);
+        border-radius: 0 0.75em 0.75em 0;
+        color:rgb(255, 255, 255);
+        border:none;
+        padding:0.5em;
+    }
+}

@@ -1,0 +1,12 @@
+.pokelist{
+    padding:0.3em;
+
+    &__item{
+        margin:0.26em 0;
+    }
+
+    &__link{
+        text-decoration: none;
+        color:rgb(177, 83, 172);
+    }
+}
